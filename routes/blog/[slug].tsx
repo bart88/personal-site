@@ -9,9 +9,6 @@ import { CSS, render } from "@deno/gfm";
 export const handler: Handlers<Post> = {
   async GET(_req, ctx) {
     const post = await getPost(ctx.params.slug);
-
-    debugger;
-
     if (post === null) return ctx.renderNotFound();
     return ctx.render(post);
   },
