@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Prevent scrollbars */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow: hidden !important;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 /* Custom animations and effects */
 @keyframes pulse-slow {
   0%, 100% {

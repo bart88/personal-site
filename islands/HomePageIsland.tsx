@@ -32,8 +32,8 @@ export default function HomePageIsland({ children }: HomePageIslandProps) {
   return (
     <>
       {/* Main content */}
-      <main ref={mainContentRef} class="relative z-10 transition-transform duration-1000 ease-in-out">
-        <div class="container mx-auto px-4 py-12 min-h-screen flex items-center justify-center">
+      <main ref={mainContentRef} class="relative z-10 transition-transform duration-1000 ease-in-out h-full">
+        <div class="container mx-auto px-4 py-12 h-full flex items-center justify-center overflow-hidden">
           <div class="max-w-4xl w-full">
             
             {/* Hero section */}
