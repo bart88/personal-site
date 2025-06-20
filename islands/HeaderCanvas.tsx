@@ -41,28 +41,33 @@ class Particle {
         this.timer--;
 
         if (this.timer >= 1) {
-        let x = Math.floor(this.x / this.effect.cellSize);
-        let y = Math.floor(this.y / this.effect.cellSize);
-        let index = y * this.effect.columns + x;
-        this.angle = this.effect.flowField[index];
+            // Check if particle is within canvas bounds first
+            if (this.x < 0 || this.x >= this.effect.width || 
+                this.y < 0 || this.y >= this.effect.height) {
+                this.reset();
+                return;
+            }
 
-        this.speedX = Math.cos(this.angle);
-        this.speedY = Math.sin(this.angle);
-        this.x += this.speedX * this.speedModifier;
-        this.y += this.speedY * this.speedModifier;
+            // Calculate grid position with bounds checking
+            let x = Math.floor(this.x / this.effect.cellSize);
+            let y = Math.floor(this.y / this.effect.cellSize);
+            
+            // Clamp grid coordinates to valid range
+            x = Math.max(0, Math.min(x, this.effect.columns - 1));
+            y = Math.max(0, Math.min(y, this.effect.rows - 1));
+            
+            const index = y * this.effect.columns + x;
+            this.angle = this.effect.flowField[index];
 
-        // test
-        const buffer = 5; // or any small value you prefer
-if (this.x <= -buffer || this.x >= this.effect.width + buffer || 
-    this.y <= -buffer || this.y >= this.effect.height + buffer) {
-    this.history.shift();
-}
+            this.speedX = Math.cos(this.angle);
+            this.speedY = Math.sin(this.angle);
+            this.x += this.speedX * this.speedModifier;
+            this.y += this.speedY * this.speedModifier;
 
-
-        this.history.push({ x: this.x, y: this.y });
-        if (this.history.length > this.maxLength) {
-            this.history.shift();
-        }
+            this.history.push({ x: this.x, y: this.y });
+            if (this.history.length > this.maxLength) {
+                this.history.shift();
+            }
         } else if (this.history.length > 1) {
             this.history.shift();
         } else {
@@ -112,7 +117,7 @@ class Effect {
         this.height = height;
         this.particles = [];
         this.numberOfParticles = 1000;
-        this.cellSize = 15;
+        this.cellSize = Math.floor(Math.random() * 20 + 10); // Random between 10-29
         this.flowField = [];
         this.rows = 0;
         this.columns = 0;
