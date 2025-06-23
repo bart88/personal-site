@@ -2,17 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Prevent scrollbars */
+/* Prevent scrollbars on desktop, allow on mobile */
 * {
   box-sizing: border-box;
 }
 
 html, body {
-  overflow: hidden !important;
-  height: 100%;
-  width: 100%;
   margin: 0;
   padding: 0;
+}
+
+/* Desktop: hide scrollbars */
+@media (min-width: 768px) {
+  html, body {
+    overflow: hidden !important;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+/* Mobile: allow scrolling but hide scrollbar */
+@media (max-width: 767px) {
+  html, body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* Hide scrollbar for webkit browsers */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+  
+  body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
 }
 
 /* Custom animations and effects */
