@@ -9,6 +9,7 @@ import * as $blog_index from "./routes/blog/index.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $HeaderCanvas from "./islands/HeaderCanvas.tsx";
 import * as $HomePageIsland from "./islands/HomePageIsland.tsx";
+import * as $LangtonsAnt from "./islands/LangtonsAnt.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -22,6 +23,7 @@ const manifest = {
   islands: {
     "./islands/HeaderCanvas.tsx": $HeaderCanvas,
     "./islands/HomePageIsland.tsx": $HomePageIsland,
+    "./islands/LangtonsAnt.tsx": $LangtonsAnt,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;
