@@ -6,7 +6,9 @@ import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $blog_slug_ from "./routes/blog/[slug].tsx";
 import * as $blog_index from "./routes/blog/index.tsx";
+import * as $dogfood_index from "./routes/dogfood/index.tsx";
 import * as $index from "./routes/index.tsx";
+import * as $DogFoodCalculator from "./islands/DogFoodCalculator.tsx";
 import * as $HeaderCanvas from "./islands/HeaderCanvas.tsx";
 import * as $HomePageIsland from "./islands/HomePageIsland.tsx";
 import * as $LangtonsAnt from "./islands/LangtonsAnt.tsx";
@@ -18,9 +20,11 @@ const manifest = {
     "./routes/_app.tsx": $_app,
     "./routes/blog/[slug].tsx": $blog_slug_,
     "./routes/blog/index.tsx": $blog_index,
+    "./routes/dogfood/index.tsx": $dogfood_index,
     "./routes/index.tsx": $index,
   },
   islands: {
+    "./islands/DogFoodCalculator.tsx": $DogFoodCalculator,
     "./islands/HeaderCanvas.tsx": $HeaderCanvas,
     "./islands/HomePageIsland.tsx": $HomePageIsland,
     "./islands/LangtonsAnt.tsx": $LangtonsAnt,
