@@ -22,7 +22,7 @@ export default function HomePage() {
               
               <div className="space-y-5">
                 <p className="text-xl font-medium text-gray-900 leading-relaxed font-system">
-                  Senior Software Engineer
+                  Senior Software Engineer | AI Engineer
                 </p>
                 <p className="text-lg font-regular text-gray-600 leading-relaxed font-system">
                   Front-end specialist with 15+ years of full-stack experience
@@ -52,11 +52,11 @@ export default function HomePage() {
                   I work at{" "}
                   <a 
                     className="text-blue-600 hover:text-blue-700 underline underline-offset-4 decoration-2 decoration-blue-600/30 hover:decoration-blue-700/50 transition-all duration-300 font-medium"
-                    href="https://rezdy.com/"
+                    href="https://gdaygroup.com.au/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Rezdy
+                    Gday Group
                   </a>{" "}
                   by day and develop freelance projects by night.
                 </p>
@@ -73,7 +73,7 @@ export default function HomePage() {
                   Technologies
                 </h3>
                 <div className="grid grid-cols-3 gap-y-3 text-base font-regular text-gray-800 max-w-md font-system">
-                  {["React", "TypeScript", "Node.js", "AWS", "Angular", "AureliaJS", "Kotlin", "Java", "PHP"].map((skill) => (
+                  {["React", "Next.js", "TypeScript", "Node.js", "AWS", "Azure", "Angular", "Kotlin", "Java", "C#", "PHP", "AI SDK"].map((skill) => (
                     <span key={skill} className="hover:text-blue-600 transition-colors duration-200">
                       {skill}
                     </span>
