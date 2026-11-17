@@ -1,4 +1,6 @@
-import { useRef, useEffect } from "preact/hooks";
+"use client";
+
+import { useRef, useEffect } from "react";
 
 class Particle {
     effect: Effect;
@@ -248,7 +250,7 @@ export function HeaderCanvas() {
         <canvas 
             ref={canvasRef} 
             id="header_canvas" 
-            class="absolute z-0 w-full h-full bg-gray-800"
+            className="absolute z-0 w-full h-full bg-gray-800"
         ></canvas>
     );
 }

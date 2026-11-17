@@ -1,9 +1,9 @@
-import { JSX } from "preact";
+import type { ReactNode } from "react";
 
 interface CalculatorSectionProps {
   title: string;
   description?: string;
-  children: JSX.Element | JSX.Element[];
+  children: ReactNode;
   className?: string;
 }
 
@@ -14,15 +14,15 @@ export default function CalculatorSection({
   className = ""
 }: CalculatorSectionProps) {
   return (
-    <div class={`border-t border-black py-12 ${className}`}>
-      <div class="grid grid-cols-12 gap-8">
-        <div class="col-span-12 lg:col-span-3">
-          <h2 class="text-xl font-medium text-black mb-3 tracking-wide uppercase">{title}</h2>
+    <div className={`border-t border-black py-12 ${className}`}>
+      <div className="grid grid-cols-12 gap-8">
+        <div className="col-span-12 lg:col-span-3">
+          <h2 className="text-xl font-medium text-black mb-3 tracking-wide uppercase">{title}</h2>
           {description && (
-            <p class="text-black text-sm leading-relaxed">{description}</p>
+            <p className="text-black text-sm leading-relaxed">{description}</p>
           )}
         </div>
-        <div class="col-span-12 lg:col-span-9">
+        <div className="col-span-12 lg:col-span-9">
           {children}
         </div>
       </div>
