@@ -2,9 +2,9 @@
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
-      <div className="max-w-6xl mx-auto px-8 py-20">
+      <div className="max-w-6xl mx-auto px-8 py-20 min-h-screen flex items-center">
         {/* Swiss Grid Layout with Apple refinements */}
-        <div className="grid grid-cols-12 gap-12 min-h-screen">
+        <div className="grid grid-cols-12 gap-y-12 lg:gap-x-12 w-full">
           
           {/* Left Column - Name & Title */}
           <div className="col-span-12 lg:col-span-5 flex flex-col justify-center">
